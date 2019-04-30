@@ -59,7 +59,7 @@ Implementation of <a href="http://www.aclweb.org/anthology/D14-1181"> Convolutio
 
 Structure:embedding--->conv--->max pooling--->fully connected layer-------->softmax
 
-Check: cnn_model.py
+Check: cnn_text_classification/cnn_model.py
 
 In order to get very good result with TextCNN, you also need to read carefully about this paper <a href="https://arxiv.org/abs/1510.03820">A Sensitivity Analysis of (and Practitioners' Guide to) Convolutional Neural Networks for Sentence Classification</a>: it give you some insights of things that can affect performance. although you need to  change some settings according to your specific task.
 
@@ -82,7 +82,7 @@ Finally, we will use linear layer to project these features to per-defined label
 -------------
 Structure v1:embedding--->bi-directional lstm--->concat output--->average----->softmax layer
 
-check: bilstm_model.py
+check: bidirectional_lstm_classifier/bilstm_model.py
 
 ![alt text](https://github.com/brightmart/text_classification/blob/master/images/bi-directionalRNN.JPG)
 
@@ -134,6 +134,4 @@ Generally speaking, input of this model should have serveral sentences instead o
 
 In my training data, for each example, i have four parts. each part has same length. i concat four parts to form one single sentence. the model will split the sentence into four parts, to form a tensor with shape:[None,num_sentence,sentence_length]. where num_sentence is number of sentences(equal to 4, in my setting).
 
-check:p1_HierarchicalAttention_model.py
-
-for attentive attention you can check <a href='https://github.com/brightmart/text_classification/issues/55'>attentive attention</a>
+check:hierarchical_text_classification/HAN_model.py
